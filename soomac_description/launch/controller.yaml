@@ -1,0 +1,27 @@
+soomac_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  Component2 to base_link_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Component2 to base_link
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Component3 to Component2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Component3 to Component2
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Component4 to Component3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Component4 to Component3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Component5 to Component4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Component5 to Component4
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Component6 to Component5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Component6 to Component5
+    pid: {p: 100.0, i: 0.01, d: 10.0}
